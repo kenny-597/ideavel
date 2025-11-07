@@ -11,5 +11,14 @@ class Idea extends Model
 {
     use HasFactory;
 
-    
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class);   
+    }
+
+    public function users(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class);
+    }   
+
 }
